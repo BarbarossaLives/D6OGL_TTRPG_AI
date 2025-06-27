@@ -1,0 +1,419 @@
+{% extends "base.html" %}
+
+{% block title %}Create Character | D6OGL TTRPG AI{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <div class="mb-4 border rounded p-4">
+        <h3>Basic Information</h3>
+        <div class="row">
+            <div class="col-md-5">
+                <form>
+                    <div class="mb-3">
+                        <label for="characterName" class="form-label">Character Name</label>
+                        <textarea class="form-control" id="characterName" rows="1" maxlength="7"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="occupation" class="form-label">Occupation</label>
+                        <textarea class="form-control" id="occupation" rows="1" maxlength="7"></textarea>
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="col-6">
+                            <label for="race" class="form-label">Race</label>
+                            <textarea class="form-control" id="race" rows="1" maxlength="7"></textarea>
+                        </div>
+                        <div class="col-6">
+                            <label for="gender" class="form-label">Gender</label>
+                            <textarea class="form-control" id="gender" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="col-4">
+                            <label for="age" class="form-label">Age</label>
+                            <textarea class="form-control" id="age" rows="1" maxlength="7"></textarea>
+                        </div>
+                        <div class="col-4">
+                            <label for="height" class="form-label">Height</label>
+                            <textarea class="form-control" id="height" rows="1" maxlength="7"></textarea>
+                        </div>
+                        <div class="col-4">
+                            <label for="weight" class="form-label">Weight</label>
+                            <textarea class="form-control" id="weight" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="strengthDamage" class="form-label">Strength Damage</label>
+                        <textarea class="form-control" id="strengthDamage" rows="1" maxlength="7"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-5">
+                <form>
+                    <div class="mb-3 row">
+                        <div class="col-6">
+                            <label for="fatePoints" class="form-label">Fate Points</label>
+                            <textarea class="form-control" id="fatePoints" rows="1" maxlength="7"></textarea>
+                        </div>
+                        <div class="col-6">
+                            <label for="characterPoints" class="form-label">Character Points</label>
+                            <textarea class="form-control" id="characterPoints" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="col-6">
+                            <label for="funds" class="form-label">Funds</label>
+                            <textarea class="form-control" id="funds" rows="1" maxlength="7"></textarea>
+                        </div>
+                        <div class="col-6">
+                            <label for="movement" class="form-label">Movement</label>
+                            <textarea class="form-control" id="movement" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="bodyPoints" class="form-label">Body Points</label>
+                        <textarea class="form-control" id="bodyPoints" rows="1" maxlength="7"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="concept" class="form-label">Concept</label>
+                        <textarea class="form-control" id="concept" rows="5" placeholder="Character concept" maxlength="7"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-2 text-center d-flex align-items-center justify-content-center">
+                <a href="/edit-character-details" class="btn btn-outline-info btn-lg">Edit Character Details</a>
+            </div>
+        </div>
+    </div>
+    <div class="mb-4 border rounded p-4 bg-light-subtle">
+        <h3>Attributes</h3>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="mb-4 d-flex align-items-center">
+                    <h5 class="mb-0 me-2">Physique</h5>
+                    <textarea class="form-control ms-2" id="physique" rows="1" style="width: 60%;" maxlength="7"></textarea>
+                </div>
+                <div style="margin-left:5%;">
+                    <div class="mb-2 row align-items-center">
+                        <label for="lifting" class="col-form-label col-3">Lifting</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="lifting" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="running" class="col-form-label col-3">Running</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="running" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="stamina" class="col-form-label col-3">Stamina</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="stamina" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="swimming" class="col-form-label col-3">Swimming</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="swimming" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4 d-flex align-items-center">
+                    <h5 class="mb-0 me-2">Agility</h5>
+                    <textarea class="form-control ms-2" id="agility" rows="1" style="width: 60%;" maxlength="7"></textarea>
+                </div>
+                <div style="margin-left:5%;">
+                    <div class="mb-2 row align-items-center">
+                        <label for="acrobatics" class="col-form-label col-3">Acrobatics</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="acrobatics" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="fighters" class="col-form-label col-3">Fighters</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="fighters" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="climbing" class="col-form-label col-3">Climbing</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="climbing" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="contortion" class="col-form-label col-3">Contortion</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="contortion" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="dodge" class="col-form-label col-3">Dodge</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="dodge" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="flying" class="col-form-label col-3">Flying</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="flying" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="jumping" class="col-form-label col-3">Jumping</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="jumping" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="meleeCombat" class="col-form-label col-3">Melee Combat</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="meleeCombat" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="riding" class="col-form-label col-3">Riding</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="riding" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="sneak" class="col-form-label col-3">Sneak</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="sneak" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4 d-flex align-items-center">
+                    <h5 class="mb-0 me-2">Coordination</h5>
+                    <textarea class="form-control ms-2" id="coordination" rows="1" style="width: 60%;" maxlength="7"></textarea>
+                </div>
+                <div style="margin-left:5%;">
+                    <div class="mb-2 row align-items-center">
+                        <label for="lockpicking" class="col-form-label col-3">Lockpicking</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="lockpicking" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="marksmanship" class="col-form-label col-3">Marksmanship</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="marksmanship" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="sleightOfHand" class="col-form-label col-3">Sleight of Hand</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="sleightOfHand" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="throwing" class="col-form-label col-3">Throwing</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="throwing" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="mb-4 d-flex align-items-center">
+                    <h5 class="mb-0 me-2">Intellect</h5>
+                    <textarea class="form-control ms-2" id="intellect" rows="1" style="width: 60%;" maxlength="7"></textarea>
+                </div>
+                <div style="margin-left:5%;">
+                    <div class="mb-2 row align-items-center">
+                        <label for="culture" class="col-form-label col-3">Culture</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="culture" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="devices" class="col-form-label col-3">Devices</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="devices" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="healing" class="col-form-label col-3">Healing</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="healing" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="navigation" class="col-form-label col-3">Navigation</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="navigation" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="readingWriting" class="col-form-label col-3">Reading/Writing</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="readingWriting" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="scholar" class="col-form-label col-3">Scholar</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="scholar" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="speaking" class="col-form-label col-3">Speaking</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="speaking" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="trading" class="col-form-label col-3">Trading</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="trading" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="trap" class="col-form-label col-3">Trap</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="trap" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4 d-flex align-items-center">
+                    <h5 class="mb-0 me-2">Acumen</h5>
+                    <textarea class="form-control ms-2" id="acumen" rows="1" style="width: 60%;" maxlength="7"></textarea>
+                </div>
+                <div style="margin-left:5%;">
+                    <div class="mb-2 row align-items-center">
+                        <label for="artist" class="col-form-label col-3">Artist</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="artist" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="crafting" class="col-form-label col-3">Crafting</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="crafting" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="gambling" class="col-form-label col-3">Gambling</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="gambling" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="hide" class="col-form-label col-3">Hide</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="hide" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="investigation" class="col-form-label col-3">Investigation</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="investigation" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="knowHow" class="col-form-label col-3">Know How</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="knowHow" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="search" class="col-form-label col-3">Search</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="search" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="streetwise" class="col-form-label col-3">Streetwise</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="streetwise" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="survival" class="col-form-label col-3">Survival</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="survival" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="tradingAcumen" class="col-form-label col-3">Trading</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="tradingAcumen" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4 d-flex align-items-center">
+                    <h5 class="mb-0 me-2">Charisma</h5>
+                    <textarea class="form-control ms-2" id="charisma" rows="1" style="width: 60%;" maxlength="7"></textarea>
+                </div>
+                <div style="margin-left:5%;">
+                    <div class="mb-2 row align-items-center">
+                        <label for="animalHandling" class="col-form-label col-3">Animal Handling</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="animalHandling" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="charm" class="col-form-label col-3">Charm</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="charm" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="command" class="col-form-label col-3">Command</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="command" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="con" class="col-form-label col-3">Con</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="con" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="disguise" class="col-form-label col-3">Disguise</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="disguise" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="intimidation" class="col-form-label col-3">Intimidation</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="intimidation" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="persuasion" class="col-form-label col-3">Persuasion</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="persuasion" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-2 row align-items-center">
+                        <label for="mettle" class="col-form-label col-3">Mettle</label>
+                        <div class="col-9">
+                            <textarea class="form-control" id="mettle" rows="1" maxlength="7"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="d-grid gap-3">
+                    <button class="btn btn-outline-primary">Distribute Attribute Dice</button>
+                    <button class="btn btn-outline-success">Distribute Skill Dice</button>
+                    <button class="btn btn-outline-warning">Roll Body Points</button>
+                    <button class="btn btn-outline-danger">Roll Strength Damage</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mb-4 border rounded p-4 bg-light-subtle">
+        <h3>Advantages/Disadvantages/Special Abilities</h3>
+        <p class="text-muted">[ Advantages section coming soon ]</p>
+    </div>
+    <div class="mb-4 border rounded p-4 bg-light-subtle">
+        <h3>Details</h3>
+        <p class="text-muted">[ Details section coming soon ]</p>
+    </div>
+</div>
+{% endblock %} 
